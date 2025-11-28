@@ -6,6 +6,7 @@
 **0xA5DE11F3d940A09cD42ba0af6a8D301AE6Ca08C3**  
 Explorer Link:  
 https://coston2-explorer.flare.network/address/0xA5DE11F3d940A09cD42ba0af6a8D301AE6Ca08C3
+<img width="1512" height="982" alt="Screenshot 2025-11-28 at 1 47 54 PM" src="https://github.com/user-attachments/assets/be39e61f-c2c5-4a59-99bb-a69039735f05" />
 
 ---
 
