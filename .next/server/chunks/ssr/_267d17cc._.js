@@ -140,12 +140,14 @@ const useCalorieContract = ()=>{
     const { data: totalCaloriesRaw, refetch: refetchTotal } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$wagmi$2f$dist$2f$esm$2f$hooks$2f$useReadContract$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useReadContract"])({
         address: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$contract$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["contractAddress"],
         abi: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$contract$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["contractABI"],
-        functionName: "getTotalCalories"
+        functionName: "getTotalCalories",
+        account: address
     });
     const { data: entryCountRaw, refetch: refetchCount } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$wagmi$2f$dist$2f$esm$2f$hooks$2f$useReadContract$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useReadContract"])({
         address: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$contract$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["contractAddress"],
         abi: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$contract$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["contractABI"],
-        functionName: "getEntryCount"
+        functionName: "getEntryCount",
+        account: address
     });
     // ============ WRITE ============
     const { writeContractAsync, data: writeData, error, isPending } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$wagmi$2f$dist$2f$esm$2f$hooks$2f$useWriteContract$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useWriteContract"])();
@@ -164,7 +166,8 @@ const useCalorieContract = ()=>{
                     functionName: "getEntry",
                     args: [
                         BigInt(i)
-                    ]
+                    ],
+                    account: address
                 });
                 const caloriesRaw = Array.isArray(res) ? res[0] : res.calories;
                 const timeRaw = Array.isArray(res) ? res[1] : res.timestamp;
@@ -178,7 +181,8 @@ const useCalorieContract = ()=>{
         }
         setEntries(arr.reverse());
     }, [
-        publicClient
+        publicClient,
+        address
     ]);
     // ============ REFECTH ALL DATA ============
     const refetchAll = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(async ()=>{

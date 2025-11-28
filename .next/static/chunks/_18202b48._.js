@@ -152,12 +152,14 @@ const useCalorieContract = ()=>{
     const { data: totalCaloriesRaw, refetch: refetchTotal } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$wagmi$2f$dist$2f$esm$2f$hooks$2f$useReadContract$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useReadContract"])({
         address: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$contract$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["contractAddress"],
         abi: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$contract$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["contractABI"],
-        functionName: "getTotalCalories"
+        functionName: "getTotalCalories",
+        account: address
     });
     const { data: entryCountRaw, refetch: refetchCount } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$wagmi$2f$dist$2f$esm$2f$hooks$2f$useReadContract$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useReadContract"])({
         address: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$contract$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["contractAddress"],
         abi: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$contract$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["contractABI"],
-        functionName: "getEntryCount"
+        functionName: "getEntryCount",
+        account: address
     });
     // ============ WRITE ============
     const { writeContractAsync, data: writeData, error, isPending } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$wagmi$2f$dist$2f$esm$2f$hooks$2f$useWriteContract$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useWriteContract"])();
@@ -177,7 +179,8 @@ const useCalorieContract = ()=>{
                         functionName: "getEntry",
                         args: [
                             BigInt(i)
-                        ]
+                        ],
+                        account: address
                     });
                     const caloriesRaw = Array.isArray(res) ? res[0] : res.calories;
                     const timeRaw = Array.isArray(res) ? res[1] : res.timestamp;
@@ -192,7 +195,8 @@ const useCalorieContract = ()=>{
             setEntries(arr.reverse());
         }
     }["useCalorieContract.useCallback[fetchEntries]"], [
-        publicClient
+        publicClient,
+        address
     ]);
     // ============ REFECTH ALL DATA ============
     const refetchAll = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
@@ -272,7 +276,7 @@ const useCalorieContract = ()=>{
         state
     };
 };
-_s(useCalorieContract, "1Z2rmMp5L0/MuNMn0H9g5A1Po2Q=", false, function() {
+_s(useCalorieContract, "ucpLkI0wpmAT0LYz2jFE34Q4c4I=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$wagmi$2f$dist$2f$esm$2f$hooks$2f$useAccount$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAccount"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$wagmi$2f$dist$2f$esm$2f$hooks$2f$usePublicClient$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePublicClient"],
